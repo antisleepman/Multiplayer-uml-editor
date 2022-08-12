@@ -1,0 +1,11 @@
+{
+  "name": "shared",
+  "version": "1.5.4",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@ls1intum/apollon": "2.11.3",
+    "moment": "2.29.3",
+    "ws": "8.2.3"
+  }
+}

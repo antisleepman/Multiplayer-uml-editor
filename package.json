@@ -1,0 +1,34 @@
+{
+  "name": "apollon_standalone",
+  "version": "1.5.4",
+  "private": true,
+  "main": "index.js",
+  "repository": "git@github.com:ls1intum/Apollon_standalone.git",
+  "author": "Tobias Priesching <tobias.priesching@gmail.com>",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "start": "concurrently \"yarn start:webapp\" \"yarn start:server\" ",
+    "start:webapp": "yarn workspace webapp start",
+    "start:server": "yarn workspace server start",
+    "build": "concurrently \"yarn build:webapp\" \"yarn build:server\" ",
+    "build:local": "concurrently \"yarn build:webapp:local\" \"yarn build:server\" ",
+    "build:webapp": "yarn workspace webapp build",
+    "build:webapp:local": "yarn workspace webapp build:local",
+    "build:server": "yarn workspace server build",
+    "lint": "concurrently \"yarn lint:webapp\" \"yarn lint:server\"",
+    "lint:webapp": "yarn workspace webapp lint",
+    "lint:server": "yarn workspace server lint",
+    "prettier:check": "prettier --check 'packages/**/{main,tests}/**/*.{json,ts,tsx,js,jsx,css,scss,html}'",
+    "prettier:write": "prettier --write 'packages/**/{main,tests}/**/*.{json,ts,tsx,js,jsx,css,scss,html}'",
+    "update": "yarn upgrade-interactive --latest"
+  },
+  "devDependencies": {
+    "concurrently": "7.2.2"
+  },
+  "dependencies": {}
+}
